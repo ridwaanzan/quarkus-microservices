@@ -1,10 +1,11 @@
 package com.codecipta.controller;
 
+import com.codecipta.config.response.ResponseApi;
+import com.codecipta.entity.User;
 import com.codecipta.service.UserService;
 import io.smallrye.mutiny.Uni;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
-import org.acme.entity.User;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class UserController {
     @Path("/users")
     @Consumes({"application/json"})
     @Produces({"application/json"})
-    public Uni<List<User>> getUserData() {
+    public Uni<ResponseApi> getUserData() {
         return userService.getUsers();
     }
 
@@ -26,7 +27,7 @@ public class UserController {
     @Path("/users/{username}")
     @Consumes({"application/json"})
     @Produces({"application/json"})
-    public Uni<User> getUserByUsername(@PathParam("username") String username) {
+    public Uni<ResponseApi> getUserByUsername(@PathParam("username") String username) {
         return userService.getUserFromUsername(username);
     }
 }

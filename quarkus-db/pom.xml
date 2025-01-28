@@ -31,8 +31,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.acme</groupId>
-            <artifactId>quarkus-entity</artifactId>
+            <groupId>com.codecipta</groupId>
+            <artifactId>master-entity</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
